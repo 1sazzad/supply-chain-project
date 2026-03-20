@@ -1,0 +1,9 @@
+2026-03-20 04:34:52,287 | INFO | Features engineered. Shape: (993, 38)
+2026-03-20 04:34:52,288 | INFO | === Training delay model ===
+2026-03-20 04:34:52,454 | INFO | Classifier accuracy: 0.864
+2026-03-20 04:34:52,459 | INFO | Classifier F1 (delayed): 0.129
+2026-03-20 04:34:52,601 | INFO | Delay regressor MAE: 3.18 days | R²: -0.555
+2026-03-20 04:34:52,627 | INFO | === Training cost model ===
+2026-03-20 04:34:53,048 | INFO | Cost model  MAE=$765  RMSE=$976  R²=0.559
+2026-03-20 04:34:53,094 | INFO | Features engineered. Shape: (50, 38)
+2026-03-20 04:34:53,116 | INFO | Features engineered. Shape: (50, 38)

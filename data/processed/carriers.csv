@@ -1,0 +1,11 @@
+carrier_id,carrier_name,carrier_type,rating,country,fleet_size
+C001,Maersk Line,Ocean,4.5,Denmark,700
+C002,MSC,Ocean,4.3,Switzerland,580
+C003,CMA CGM,Ocean,4.1,France,560
+C004,Evergreen Marine,Ocean,3.8,Taiwan,210
+C005,DHL Global,Air,4.7,Germany,300
+C006,FedEx Freight,Air,4.6,USA,680
+C007,DB Schenker,Rail,4.2,Germany,120
+C008,Kuehne+Nagel,Multi,4.4,Switzerland,450
+C009,Hapag-Lloyd,Ocean,4.0,Germany,250
+C010,COSCO Shipping,Ocean,3.6,China,380

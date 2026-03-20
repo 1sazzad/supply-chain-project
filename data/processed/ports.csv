@@ -1,0 +1,13 @@
+port_id,port_name,country,region,congestion_index,congestion_level
+P001,Shanghai,China,Asia Pacific,0.92,Critical
+P002,Singapore,Singapore,Asia Pacific,0.71,Medium
+P003,Rotterdam,Netherlands,Europe,0.68,Medium
+P004,Los Angeles,USA,North America,0.85,Critical
+P005,Dubai (Jebel Ali),UAE,Middle East,0.74,Medium
+P006,Hamburg,Germany,Europe,0.62,Medium
+P007,Busan,South Korea,Asia Pacific,0.78,High
+P008,Antwerp,Belgium,Europe,0.65,Medium
+P009,New York / NJ,USA,North America,0.8,High
+P010,Colombo,Sri Lanka,South Asia,0.55,Low
+P011,Tanjung Pelepas,Malaysia,Asia Pacific,0.6,Medium
+P012,Long Beach,USA,North America,0.83,High

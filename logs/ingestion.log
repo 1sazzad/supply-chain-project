@@ -1,0 +1,22 @@
+2026-03-20 04:34:22,312 | INFO | === Ingestion started ===
+2026-03-20 04:34:22,324 | INFO | [carriers] Loaded 10 rows, 6 columns
+2026-03-20 04:34:22,326 | INFO | [carriers] No nulls found
+2026-03-20 04:34:22,338 | INFO | [ports] Loaded 12 rows, 5 columns
+2026-03-20 04:34:22,340 | INFO | [ports] No nulls found
+2026-03-20 04:34:22,355 | INFO | [shipments] Loaded 1000 rows, 9 columns
+2026-03-20 04:34:22,357 | WARNING | [shipments] Nulls found:
+actual_arrival    7
+2026-03-20 04:34:22,374 | INFO | [weather] Loaded 3648 rows, 6 columns
+2026-03-20 04:34:22,376 | INFO | [weather] No nulls found
+2026-03-20 04:34:22,376 | INFO | === Ingestion complete ===
+2026-03-20 04:34:22,377 | INFO | === Transform started ===
+2026-03-20 04:34:22,419 | INFO | [shipments] on-time rate: 86.1%
+2026-03-20 04:34:22,421 | INFO | [shipments] avg delay (delayed only): 3.76 days
+2026-03-20 04:34:22,517 | INFO | === Transform complete ===
+2026-03-20 04:34:22,517 | INFO | === Load started ===
+2026-03-20 04:34:22,643 | INFO | Connected to SQLite at ..\data\supply_chain.db
+2026-03-20 04:34:22,942 | INFO | View 'v_carrier_kpis' created
+2026-03-20 04:34:22,955 | INFO | View 'v_port_congestion' created
+2026-03-20 04:34:22,968 | INFO | View 'v_route_performance' created
+2026-03-20 04:34:22,980 | INFO | View 'v_monthly_kpis' created
+2026-03-20 04:34:23,092 | INFO | === Load complete ===
