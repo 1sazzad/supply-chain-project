@@ -11,7 +11,9 @@ from pathlib import Path
 import plotly.express as px
 import plotly.graph_objects as go
 
-DB_PATH = Path("../data/supply_chain.db")
+APP_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = APP_DIR.parent
+DB_PATH = PROJECT_ROOT / "data" / "supply_chain.db"
 
 st.set_page_config(
     page_title="Supply Chain Analytics",
@@ -25,13 +27,19 @@ st.set_page_config(
 
 @st.cache_data
 def load_data():
+    if not DB_PATH.exists():
+        raise FileNotFoundError(f"Database not found at {DB_PATH}")
+
     conn = sqlite3.connect(DB_PATH)
-    master   = pd.read_sql("SELECT * FROM master",             conn)
-    kpis     = pd.read_sql("SELECT * FROM v_carrier_kpis",     conn)
-    ports    = pd.read_sql("SELECT * FROM v_port_congestion",  conn)
-    routes   = pd.read_sql("SELECT * FROM v_route_performance",conn)
-    monthly  = pd.read_sql("SELECT * FROM v_monthly_kpis",     conn)
-    conn.close()
+    try:
+        master   = pd.read_sql("SELECT * FROM master",             conn)
+        kpis     = pd.read_sql("SELECT * FROM v_carrier_kpis",     conn)
+        ports    = pd.read_sql("SELECT * FROM v_port_congestion",  conn)
+        routes   = pd.read_sql("SELECT * FROM v_route_performance",conn)
+        monthly  = pd.read_sql("SELECT * FROM v_monthly_kpis",     conn)
+    finally:
+        conn.close()
+
     master["departure_date"] = pd.to_datetime(master["departure_date"], errors="coerce")
     return master, kpis, ports, routes, monthly
 
