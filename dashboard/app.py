@@ -144,13 +144,19 @@ col_e, col_f = st.columns([3, 2])
 
 with col_e:
     st.subheader("🛣️ Top Routes by On-Time Performance")
-    st.dataframe(
+    routes_show = (
         routes_df[["origin_port","dest_port","shipment_count",
                    "on_time_pct","avg_delay","avg_cost","avg_transit_days"]]
         .sort_values("on_time_pct", ascending=False)
         .head(15)
-        .style.background_gradient(subset=["on_time_pct"], cmap="Greens")
-        .format({"avg_cost": "${:,.0f}", "on_time_pct": "{:.1f}%", "avg_delay": "{:.1f}"}),
+        .copy()
+    )
+    routes_show["on_time_pct"] = routes_show["on_time_pct"].map(lambda x: f"{x:.1f}%")
+    routes_show["avg_delay"] = routes_show["avg_delay"].map(lambda x: f"{x:.1f}")
+    routes_show["avg_cost"] = routes_show["avg_cost"].map(lambda x: f"${x:,.0f}")
+    routes_show["avg_transit_days"] = routes_show["avg_transit_days"].map(lambda x: f"{x:.1f}")
+    st.dataframe(
+        routes_show,
         use_container_width=True, height=320
     )
 
