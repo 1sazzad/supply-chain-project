@@ -76,7 +76,7 @@ supply_chain_project/
 
 For a full, user-friendly architecture and design walkthrough (with visual diagrams), see:
 
-- [`system_architecture_and_design.md`](system_architecture_and_design.md)
+- [`docs/system_architecture_and_design.md`](docs/system_architecture_and_design.md)
 
 ---
 
